@@ -1,0 +1,51 @@
+# Projet de Supervision Docker avec Grafana, Prometheus, cAdvisor, Caddy (Sécurité), Alertmanager et Node Exporter
+## Objectif du Projet :
+Le projet vise à mettre en place une solution de supervision complète pour les conteneurs Docker, offrant des métriques en temps réel, des tableaux de bord visuels et des alertes en cas de comportement anormal.
+
+## Composants Clés :
+
+1. **Grafana :**
+   - Utilisé pour la création de tableaux de bord interactifs et la visualisation des données de supervision.
+   - Configuration avec un accès sécurisé via Caddy.
+
+2. **Prometheus :**
+   - Système de surveillance et d'alerte qui collecte et stocke les métriques des conteneurs Docker.
+   - Configuration pour récupérer des métriques depuis Node Exporter, cAdvisor, et d'autres sources.
+
+3. **cAdvisor :**
+   - Collecteur de métriques spécifiques aux conteneurs Docker.
+   - Intégré à Prometheus pour fournir des informations détaillées sur les performances des conteneurs.
+
+4. **Caddy (Sécurité) :**
+   - Serveur web utilisé comme reverse proxy sécurisé pour Grafana et d'autres services.
+   - Configuration avec basicauth pour une couche supplémentaire de sécurité.
+
+5. **Alertmanager :**
+   - Gestionnaire d'alertes intégré à Prometheus pour la gestion des alertes générées par les règles définies.
+
+6. **Node Exporter :**
+   - Collecte des métriques système et des ressources de la machine hôte.
+   - Intégré à Prometheus pour surveiller les performances du système hôte.
+
+## Fonctionnalités Clés :
+
+- **Tableaux de Bord Grafana :**
+  - Création de tableaux de bord personnalisés pour surveiller les métriques Docker.
+  - Visualisation en temps réel des performances et de l'utilisation des ressources.
+
+- **Alertes Automatisées :**
+  - Configuration d'alertes basées sur des seuils prédéfinis.
+  - Notification instantanée via différents canaux (e-mail, Slack, etc.) grâce à Alertmanager.
+
+- **Sécurité avec Caddy :**
+  - Utilisation de Caddy comme proxy sécurisé pour chiffrer la communication avec Grafana.
+  - Configuration basicauth pour restreindre l'accès non autorisé.
+
+- **Collecte de Métriques :**
+  - Collecte de métriques spécifiques aux conteneurs avec cAdvisor.
+  - Surveillance des performances du système hôte avec Node Exporter.
+
+## Déploiement :
+
+- Utilisation de Docker Compose pour déployer facilement l'ensemble de la stack de supervision.
+- Paramètres configurables via des fichiers de configuration pour une adaptation facile aux besoins spécifiques.
